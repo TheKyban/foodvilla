@@ -1,0 +1,59 @@
+.body {
+	padding: 20px 15vw;
+}
+.search {
+	text-align: end;
+	margin-bottom: 20px;
+}
+
+.search > input {
+	border: 1px solid #acacac;
+	outline: none;
+	padding: 5px 15px;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+
+.search > button {
+	border: none;
+	outline: none;
+	padding: 5px 15px;
+	font-size: 1rem;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.search > button > img {
+	width: 20px;
+	vertical-align: middle;
+}
+.allrestraunts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	place-items: center;
+	gap: 10px;
+}
+
+.allrestraunts > a {
+	text-decoration: none;
+	color: black;
+}
+
+.footer {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	color: #686868;
+	font-size: 0.9rem;
+	border-top: 1px solid #e2cccc;
+}
+
+
+@media screen and (max-width:450px) {
+	.search {
+		text-align: center;
+	}
+	.search > input {
+		width: 50%;
+	}
+}

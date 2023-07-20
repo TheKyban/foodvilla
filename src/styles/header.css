@@ -1,0 +1,37 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 25vw;
+	box-shadow: 0 5px 10px #e0e0e0a6;
+	overflow: hidden;
+}
+
+.header > ul {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	list-style: none;
+}
+
+.header > ul > li {
+	padding: 0 10px;
+}
+.header > ul > li > a {
+	color: #111;
+	text-decoration: none;
+}
+
+#logo {
+	width: 120px;
+}
+
+@media screen and (max-width: 700px) {
+	#logo {
+		width: 80px;
+	}
+	.header {
+		padding: 10px 0vw;
+	}
+}

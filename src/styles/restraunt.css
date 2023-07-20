@@ -1,0 +1,53 @@
+.restrauntCard {
+	width: 230px;
+	height: 260px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	box-sizing: content-box;
+	border: 1px solid transparent;
+}
+
+.restrauntCard:hover {
+	border: 1px solid #dadada;
+	border-radius: 3px;
+}
+.restrauntCard > img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.restrauntCard > h3 {
+	margin: 20px 0 0;
+	font-size: 1rem;
+	font-weight: 400;
+	align-self: start;
+}
+.restrauntCard > h4 {
+	font-size: 0.8rem;
+	font-weight: 300;
+	color: #7c7979;
+	align-self: start;
+
+	height: 18px;
+	overflow: hidden;
+}
+
+.restrauntCard > .details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 10px;
+	align-self: start;
+	flex-wrap: wrap;
+	font-size: 0.7rem;
+	gap: 15px;
+}
+.restrauntCard > .details :first-child {
+	list-style: none;
+}
+
+.restrauntCard > .details > li {
+	list-style-position: inside;
+}

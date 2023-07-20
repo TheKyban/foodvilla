@@ -1,0 +1,43 @@
+.form {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	gap: 5px;
+	margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eecbcb;
+}
+
+.form > label {
+    color: #250202;
+}
+
+.form > input {
+	padding: 3px 5px;
+	border: 1px solid #f1dddd;
+	border-radius: 4px;
+	outline: none;
+}
+.form > input:focus {
+	outline: none;
+}
+.form > button {
+	margin-top: 15px;
+	padding: 10px 0;
+	border: none;
+	border-radius: 5px;
+    cursor: pointer;
+    color: #8c1ef3;
+}
+
+.form > span {
+    margin-top: 15px;
+    color: #a76767;
+}
+
+.form > span > a {
+    color: #8c1ef3;
+    text-decoration: underline;
+}

@@ -1,0 +1,239 @@
+.MenuWrapper {
+	display: flex;
+	flex-direction: column;
+	padding: 0 25vw;
+	margin-bottom: 50px;
+}
+
+.shimmer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	padding: 0 15vw;
+	margin-top: 50px;
+	gap: 15px;
+	place-items: center;
+}
+
+@media screen and (max-width: 700px) {
+	.MenuWrapper {
+		padding: 0 10vw;
+	}
+	.shimmer {
+		padding: 0 10vw;
+	}
+}
+/**
+* Location And Search
+*/
+.LocationAndSearch {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 30px 0;
+}
+
+.LocationAndSearch > .location {
+	font-size: 0.6rem;
+}
+
+.LocationAndSearch > .location > a {
+	text-decoration: none;
+	font-weight: 300;
+}
+
+.LocationAndSearch > .location > #location {
+	font-weight: 300;
+}
+
+.LocationAndSearch > button {
+	outline: none;
+	border: none;
+	padding: 5px 10px;
+	font-weight: 300;
+	border-radius: 5px;
+}
+
+/* Menu Header */
+
+.MenuHeaderWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.MenuHeader {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.MenuHeader > .Details {
+	display: flex;
+	flex-direction: column;
+}
+.MenuHeader > .Details > h1 {
+	font-size: 1rem;
+}
+
+.MenuHeader > .Details > span {
+	font-size: 0.8rem;
+	font-weight: 300;
+}
+
+.MenuHeader > .rating {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgb(199, 191, 191);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.MenuHeader > .rating > span {
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.MenuHeader > .rating > span:first-of-type {
+	color: #7e7b7b;
+	font-size: 1rem;
+	margin-bottom: 4px;
+}
+
+.MenuHeader > .rating > span:last-of-type {
+	color: #c7c7c7;
+	margin-top: 7px;
+}
+.MenuHeader > .rating > hr {
+	border: none;
+	border-top: 1px solid rgb(236, 224, 224);
+}
+
+.MenuHeaderWrapper > .message {
+	display: flex;
+	gap: 10px;
+}
+.MenuHeaderWrapper > .message > p {
+	font-size: 0.9rem;
+	margin: 0;
+	padding: 0;
+}
+
+.MenuHeaderWrapper > .message > img {
+	height: 18px;
+	width: 18px;
+	background-size: contain !important;
+}
+.MenuHeaderWrapper > hr {
+	border: none;
+	border-top: 1px dashed rgb(224, 206, 206);
+	padding: 0;
+	margin: 0;
+}
+.MenuHeaderWrapper > hr:last-of-type {
+	border: none;
+	border-top: 1px solid #e0cece;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.MenuHeaderWrapper > .TimeAndPrice {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	font-size: 0.9rem;
+}
+.MenuHeaderWrapper > .TimeAndPrice > span {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	font-weight: 500;
+}
+.MenuItem {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.MenuItem > .MenuItemHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.MenuItem > .MenuItemHeader > h1 {
+	font-size: 1rem;
+	padding-left: 5px;
+}
+
+.MenuItem > .MenuItemHeader > img {
+	width: 30px;
+}
+.MenuItem .blank {
+	display: block;
+	height: 20px;
+	background-color: #d3ddddc0;
+}
+
+/* Lists */
+.itemWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.listWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #e0cece;
+}
+
+.listWrapper .left {
+	display: flex;
+	flex-direction: column;
+}
+.listWrapper .left > img {
+	width: 38px;
+}
+.listWrapper .left > span {
+	margin-left: 10px;
+}
+.listWrapper .left > span:last-of-type {
+	font-weight: 300;
+	font-size: 0.8rem;
+	padding-right: 30px;
+}
+
+.listWrapper .right > img {
+	height: 100px;
+	width: 150px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+.listWrapper .right {
+	position: relative;
+}
+.listWrapper .right > button {
+	position: absolute;
+	bottom: -15%;
+	z-index: 5;
+	left: 50%;
+	transform: translateX(-50%);
+	outline: none;
+	border: 1px solid #e69f9f;
+	padding: 10px 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	color: #fc6060;
+	font-size: 1rem;
+	font-weight: 600;
+}
