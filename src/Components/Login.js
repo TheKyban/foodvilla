@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div>
+        <div className="formWrapper">
 			<Formik
 				initialValues={{
 					email: "",

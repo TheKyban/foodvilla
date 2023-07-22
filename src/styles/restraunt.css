@@ -1,5 +1,5 @@
 .restrauntCard {
-	width: 230px;
+	width: 210px;
 	height: 260px;
 	display: flex;
 	flex-direction: column;
@@ -16,11 +16,12 @@
 .restrauntCard > img {
 	width: 100%;
 	object-fit: cover;
+	border-radius: 3px;
 }
 
 .restrauntCard > h3 {
 	margin: 20px 0 0;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	font-weight: 400;
 	align-self: start;
 }
@@ -41,7 +42,7 @@
 	margin-top: 10px;
 	align-self: start;
 	flex-wrap: wrap;
-	font-size: 0.7rem;
+	font-size: 0.6rem;
 	gap: 15px;
 }
 .restrauntCard > .details :first-child {
@@ -50,4 +51,27 @@
 
 .restrauntCard > .details > li {
 	list-style-position: inside;
+}
+
+
+@media screen and (max-width: 737px) {
+	.restrauntCard {
+		width: 160px;
+		height:210px ;
+		padding: 5px;
+	}
+
+
+	.restrauntCard > h3 {
+		font-size: 0.8rem;
+	}
+	.restrauntCard > h4 {
+		font-size: 0.7rem;
+	}
+
+
+	.restrauntCard > .details {
+		font-size: 0.5rem;
+		gap: 8px;
+	}
 }

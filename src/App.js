@@ -4,10 +4,10 @@ import "./styles/header.css";
 import "./styles/body.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./Components/Footer";
-import About from "./Components/About.js";
-import Cart from "./Components/Cart";
+import About from "./Pages/About.js";
+import Cart from "./Pages/Cart";
 import Profile from "./Components/Profile";
-import RestrauntMenu from "./Components/RestrauntMenu";
+import RestrauntMenu from "./pages/RestrauntMenu";
 import Registration from "./Components/Registration";
 import Login from "./Components/Login.js";
 
@@ -39,7 +39,7 @@ const Routes = createBrowserRouter([
 			},
 			{
 				path: "/profile",
-				element: <Profile name={"Aditya"}/>,
+				element: <Profile name={"Aditya"} />,
 			},
 			{
 				path: "/restraunt/:id",

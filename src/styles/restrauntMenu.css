@@ -189,12 +189,12 @@
 }
 
 .listWrapper {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr 150px;
 	margin-top: 50px;
-	padding-bottom: 50px;
+	gap: 10px;
 	border-bottom: 1px solid #e0cece;
+	padding: 0 30px 50px 10px;
 }
 
 .listWrapper .left {
@@ -207,21 +207,26 @@
 .listWrapper .left > span {
 	margin-left: 10px;
 }
-.listWrapper .left > span:last-of-type {
-	font-weight: 300;
-	font-size: 0.8rem;
-	padding-right: 30px;
+
+.listWrapper > .rightWrapper > .right {
+	position: relative;
+	height: fit-content;
+	width: fit-content;
 }
 
+.listWrapper > .rightWrapper {
+	display: grid;
+	place-items: center;
+	height: 100% !important;
+	width: 100%;
+}
 .listWrapper .right > img {
 	height: 100px;
 	width: 150px;
 	object-fit: cover;
 	border-radius: 10px;
 }
-.listWrapper .right {
-	position: relative;
-}
+
 .listWrapper .right > button {
 	position: absolute;
 	bottom: -15%;
@@ -236,4 +241,13 @@
 	color: #fc6060;
 	font-size: 1rem;
 	font-weight: 600;
+}
+
+.listWrapper > span {
+	font-weight: 300;
+	font-size: 0.8rem;
+	margin-left: 10px;
+	margin-top: 20px;
+	grid-column-start: 1;
+	grid-column-end: -1;
 }

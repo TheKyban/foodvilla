@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Registration = () => {
 	return (
-		<div>
+		<div className="formWrapper">
 			<Formik
 				initialValues={{
 					firstName: "",
