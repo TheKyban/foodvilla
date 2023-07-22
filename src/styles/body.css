@@ -82,3 +82,19 @@
 		grid-template-columns: repeat(2, minmax(160px, 1fr));
 	}
 }
+@media screen and (max-width: 300px) {
+	.search {
+		width: 160px;
+		padding-left: 3px;
+	}
+
+	.search > input {
+		max-width: 125px;
+		font-size: 0.8rem;
+	}
+
+	.allrestraunts {
+		width: 353px;
+		grid-template-columns: repeat(1, minmax(160px, 1fr));
+	}
+}
