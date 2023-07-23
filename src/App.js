@@ -1,7 +1,5 @@
 import Body from "./Components/Body";
 import Header from "./Components/Header";
-import "./styles/header.css";
-import "./styles/body.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./Components/Footer";
 import About from "./Pages/About.js";

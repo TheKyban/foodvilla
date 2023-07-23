@@ -7,19 +7,38 @@
 
 .shimmer {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	padding: 0 15vw;
+	width: 1000px;
+	margin: auto;
 	margin-top: 50px;
-	gap: 15px;
 	place-items: center;
+
+	grid-template-columns: repeat(4, minmax(230px, 1fr));
+	gap: 10px;
+}
+
+@media screen and (max-width: 1017px) {
+	.shimmer {
+		width: 720px;
+		grid-template-columns: repeat(3, minmax(230px, 1fr));
+	}
+}
+@media screen and (max-width: 737px) {
+	.shimmer {
+		width: 353px;
+		grid-template-columns: repeat(2, minmax(160px, 1fr));
+	}
 }
 
 @media screen and (max-width: 700px) {
 	.MenuWrapper {
 		padding: 0 10vw;
 	}
+}
+
+@media screen and (max-width: 300px) {
 	.shimmer {
-		padding: 0 10vw;
+		width: 353px;
+		grid-template-columns: repeat(1, minmax(160px, 1fr));
 	}
 }
 /**

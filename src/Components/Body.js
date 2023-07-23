@@ -10,11 +10,11 @@ const Body = () => {
 	const [query, setQuery] = useState("");
 	const [seeAllRestaurants, filteredRestraunts, setFilteredRestraunts] =
 		useData();
-
 	return (
-		<div className="body">
-			<div className="search">
+		<div className="body flex items-center flex-col">
+			<div className="w-mobile sm:w-tablet lg:w-pc pl-2 mt-6 mb-3">
 				<input
+					className="text-xs border px-2 py-1 mr-2 rounded outline-none"
 					placeholder="Search Restraunts"
 					value={query}
 					onChange={(e) => setQuery(e.target.value)}
@@ -27,11 +27,12 @@ const Body = () => {
 							setFilteredRestraunts,
 						)
 					}
+					className="align-middle"
 				>
-					<img src={searchImg} />
+					<img src={searchImg} className="w-4" />
 				</button>
 			</div>
-			<div className="allrestraunts">
+			<div className="allrestraunts grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center w-mobile sm:w-tablet lg:w-pc gap-3">
 				{filteredRestraunts
 					? filteredRestraunts?.map((restraunt) => {
 							return (

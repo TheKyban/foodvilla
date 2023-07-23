@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import hamburger from "../assets/hamburger.svg";
 import { useState } from "react";
 
 const Header = () => {
 	const [login] = useState(false);
 	return (
-		<>
-			<div className="header">
-				<img id={"logo"} src={logo} />
-				<ul>
+		<div className="headerWrapper shadow-md flex items-center justify-center">
+			<div className="header flex justify-between items-center py-3 w-mobile sm:w-tablet lg:w-pc pl-2">
+				<img id={"logo"} className="w-14 object-contain " src={logo} />
+				<ul className="hidden flex-row gap-4 items-center sm:flex">
 					<li>
 						<Link to={"/"}>Home</Link>
 					</li>
@@ -26,8 +27,9 @@ const Header = () => {
 						)}
 					</li>
 				</ul>
+				<img src={hamburger} className="w-6 sm:hidden" />
 			</div>
-		</>
+		</div>
 	);
 };
 
