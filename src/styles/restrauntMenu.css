@@ -214,6 +214,11 @@
 	gap: 10px;
 	border-bottom: 1px solid #e0cece;
 	padding: 0 30px 50px 10px;
+	scrollbar-width: 0 !important;
+}
+
+.listWrapper::-webkit-scrollbar {
+	display: none !important;
 }
 
 .listWrapper .left {

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import useCoordinates from "./useCoordinates";
-import { restaurantMenu } from "../Constant";
 
 const useRestrauntsMenu = (id) => {
 	const coordinates = useCoordinates();
@@ -15,12 +14,11 @@ const useRestrauntsMenu = (id) => {
 
 	const fetchMenu = async () => {
 		setLoading(true);
-		// const data = await fetch(
-		// 	`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${coordinates.lat}&lng=${coordinates.lng}&restaurantId=${id}&submitAction=ENTER`,
-		// );
+		const data = await fetch(
+			`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${coordinates.lat}&lng=${coordinates.lng}&restaurantId=${id}&submitAction=ENTER`,
+		);
 
-		// const json = await data.json();
-		const json = restaurantMenu
+		const json = await data.json();
 		setData(json?.data?.cards[0]?.card?.card?.info);
 
 		const lists = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR
