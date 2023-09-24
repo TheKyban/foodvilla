@@ -13,14 +13,28 @@ import Profile from "./Components/Profile";
 import RestrauntMenu from "./pages/RestrauntMenu";
 import Registration from "./Components/Registration";
 import Login from "./Components/Login.js";
+import Error from "./Pages/Error";
+import { useEffect, useState } from "react";
+import Offline from "./Pages/Offline";
 
 const Frame = () => {
     const location = useLocation();
+    const [online, setOnline] = useState(navigator.onLine);
+    console.log(online);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setOnline(navigator.onLine);
+        }, 3000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
     return (
         <>
             <Header />
-            <Outlet />
+            {online ? <Outlet /> : <Offline />}
             {location.pathname === "/cart" ? "" : <Footer />}
         </>
     );
@@ -29,15 +43,13 @@ const Routes = createBrowserRouter([
     {
         path: "/",
         element: <Frame />,
+        errorElement: <Error />,
         children: [
             {
                 path: "/",
                 element: <Body />,
             },
-            {
-                path: "/about",
-                element: <About />,
-            },
+
             {
                 path: "/cart",
                 element: <Cart />,

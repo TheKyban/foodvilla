@@ -1,5 +1,4 @@
 import { cloudinary_Url } from "../Constant";
-import "../styles/restraunt.css";
 const Restraunt = ({
 	cloudinaryImageId,
 	name,

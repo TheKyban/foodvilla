@@ -1,5 +1,5 @@
-/* .formWrapper {
-	height: 81vh;
+.formWrapper {
+	height: 90vh;
 	padding-top: 100px;
 }
 .form {
@@ -11,6 +11,7 @@
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #eecbcb;
+	background-color: #e7e7de;
 
 }
 
@@ -20,7 +21,7 @@
 
 .form > input {
 	padding: 3px 5px;
-	border: 1px solid #f1dddd;
+	border: 2px solid #817f7f;
 	border-radius: 4px;
 	outline: none;
 }
@@ -33,7 +34,8 @@
 	border: none;
 	border-radius: 5px;
     cursor: pointer;
-    color: #8c1ef3;
+    color: white;
+	background: #000;
 }
 
 .form > span {
@@ -43,5 +45,5 @@
 
 .form > span > a {
     color: #8c1ef3;
-    text-decoration: underline;
-} */
+    text-decoration: none;
+}
