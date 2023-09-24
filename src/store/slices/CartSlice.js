@@ -3,7 +3,7 @@ const CartSlice = createSlice({
     name: "cart",
     initialState: {
         carts: [],
-        totalPrice:0
+        totalPrice: 0,
     },
     reducers: {
         addItem: (state, actions) => {
@@ -51,8 +51,17 @@ const CartSlice = createSlice({
                 }
             });
         },
+        DeleteItem: (state, actions) => {
+            const { id } = actions.payload;
+            state.carts.map((cart, idx) => {
+                if (cart.id === id.id) {
+                    state.carts.splice(idx, 1);
+                }
+            });
+        },
     },
 });
 
-export const { addItem, IncreaseItem, DecreaseItem } = CartSlice.actions;
+export const { addItem, IncreaseItem, DecreaseItem, DeleteItem } =
+    CartSlice.actions;
 export default CartSlice.reducer;
