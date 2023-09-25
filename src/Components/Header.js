@@ -10,7 +10,7 @@ const Header = () => {
     const [menu, setMenu] = useState(false);
     const cart = useSelector((slice) => slice.cart.carts);
     return (
-        <div className="headerWrapper shadow-md flex items-center justify-center">
+        <div className="headerWrapper shadow-md flex items-center justify-center" data-testid="headerWrapper">
             <div className="header flex justify-between items-center py-3 w-mobile sm:w-tablet lg:w-pc pl-2">
                 <img
                     id={"logo"}
@@ -18,7 +18,7 @@ const Header = () => {
                     className="w-14 object-contain "
                     src={logo}
                 />
-                <ul className="hidden flex-row gap-4 items-center sm:flex">
+                <ul data-testid="links" className="hidden flex-row gap-4 items-center sm:flex">
                     <li>
                         <Link to={"/"}>Home</Link>
                     </li>
@@ -49,9 +49,10 @@ const Header = () => {
                     src={menu ? cross : hamburger}
                     className="w-6 sm:hidden"
                     onClick={() => setMenu(!menu)}
+                    data-testid="hamburger"
                 />
                 {menu && (
-                    <div className="sm:hidden absolute z-10 top-16 left-0 w-screen flex items-center justify-center">
+                    <div data-testid="mobile-nav" className="sm:hidden absolute z-10 top-16 left-0 w-screen flex items-center justify-center">
                         <ul className=" flex flex-col gap-4 items-center rounded w-[95%] justify-center border py-3 bg-white">
                             <li onClick={() => setMenu(false)}>
                                 <Link to={"/"}>Home</Link>

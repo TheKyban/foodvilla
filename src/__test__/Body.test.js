@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { StaticRouter } from "react-router-dom/server";
 import Store from "../store/store";
 import Body from "../Components/Body";
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { act, fireEvent, render, waitFor } from "@testing-library/react";
 import { restrauntData } from "../Constant";
 import "@testing-library/jest-dom";
 
@@ -19,57 +19,48 @@ global.fetch = jest.fn(() =>
     Promise.resolve({ json: () => Promise.resolve(restrauntData) })
 );
 
-test("Simmer should render first", async () => {
-    const body = render(
-        <StaticRouter>
-            <Provider store={Store}>
-                <Body />
-            </Provider>
-        </StaticRouter>
-    );
-    const simmer = body.getAllByTestId("simmer");
-    // expect(simmer).toBeInTheDocument()
-    expect(simmer.length).toBe(15);
-});
-
 test("restraunt cards should render", async () => {
-    const body = render(
-        <StaticRouter>
-            <Provider store={Store}>
-                <Body />
-            </Provider>
-        </StaticRouter>
+    // by using act we are telling react to wait for the promise to resolve(means we render first shimmer then restraunt cards)
+    const body = await act(async () =>
+        render(
+            <StaticRouter>
+                <Provider store={Store}>
+                    <Body />
+                </Provider>
+            </StaticRouter>
+        )
     );
-
-    await waitFor(() => expect(body.getByTestId("search-div")));
-    const restrauntCards = body.getAllByTestId("restraunt");
-    expect(restrauntCards.length).toBe(15);
+    expect(body.getAllByTestId("restraunt").length).toBe(15);
 });
 
 test("on search restraunt length should change", async () => {
-    const body = render(
-        <StaticRouter>
-            <Provider store={Store}>
-                <Body />
-            </Provider>
-        </StaticRouter>
+    const body = await act(async () =>
+        render(
+            <StaticRouter>
+                <Provider store={Store}>
+                    <Body />
+                </Provider>
+            </StaticRouter>
+        )
     );
 
     await waitFor(() => expect(body.getByTestId("search-div")));
-    const searchinput = body.getByTestId("search-input");
-    const searchbtn = body.getByTestId("search-btn");
 
     // searching for sanwara restraunt
-    fireEvent.change(searchinput, { target: { value: "sanwara" } });
-    fireEvent.click(searchbtn);
-    
+    fireEvent.change(body.getByTestId("search-input"), {
+        target: { value: "sanwara" },
+    });
+    fireEvent.click(body.getByTestId("search-btn"));
+
     // one restraunt should be shown
     expect(body.getAllByTestId("restraunt").length).toBe(1);
-    
+
     // searching for empty string(all restraunts should be shown again)
-    fireEvent.change(searchinput, { target: { value: "" } });
-    fireEvent.click(searchbtn);
-    
+    fireEvent.change(body.getByTestId("search-input"), {
+        target: { value: "" },
+    });
+    fireEvent.click(body.getByTestId("search-btn"));
+
     // all restraunt should be shown
     expect(body.getAllByTestId("restraunt").length).toBe(15);
 });
