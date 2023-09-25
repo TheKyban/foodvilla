@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../store/slices/CartSlice";
+
 export const LocationAndSearch = ({ location, name }) => {
     return (
         <div className="LocationAndSearch">
@@ -76,6 +77,7 @@ export const Item = ({ title, itemCards }) => {
     return (
         <div className="MenuItem">
             <div
+                data-testid="category-box"
                 className="MenuItemHeader"
                 onClick={() => setShowList(!showList)}
             >
@@ -89,9 +91,7 @@ export const Item = ({ title, itemCards }) => {
                         itemCards.map((list) => {
                             const data = list.card.info;
 
-                            return (
-                                data && <Food key={data.id} data={data} />
-                            );
+                            return data && <Food key={data.id} data={data} />;
                         })}
                 </>
             ) : (
@@ -105,11 +105,10 @@ export const Food = ({ data }) => {
     const { name, price, description, imageId } = data;
     const dispatch = useDispatch();
     const AddToCart = () => {
-        console.log(data);
         dispatch(addItem(data));
     };
     return (
-        <div className="listWrapper">
+        <div className="listWrapper" data-testid="food">
             <div className="left">
                 <img src={listImg} />
                 <span>{name}</span>
@@ -120,7 +119,9 @@ export const Food = ({ data }) => {
                     {imageId && (
                         <img src={`${cloudinary_Url_2}/${imageId}`} alt=" " />
                     )}
-                    <button onClick={AddToCart}>ADD</button>
+                    <button data-testid="food-add-btn" onClick={AddToCart}>
+                        ADD
+                    </button>
                 </div>
             </div>
 

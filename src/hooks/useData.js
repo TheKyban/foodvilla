@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const useData = () => {
 	const [seeAllRestaurants, setSeeAllRestaurants] = useState([]);
-	const [filteredRestraunts, setFilteredRestraunts] = useState(); // filtered
+	const [filteredRestraunts, setFilteredRestraunts] = useState([]); // filtered
 	const coordinates = useCoordinates();
 
 	useEffect(() => {

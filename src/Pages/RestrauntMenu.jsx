@@ -37,7 +37,7 @@ const RestrauntMenu = () => {
 				price={data?.costForTwoMessage}
 			/>
 
-			<div className="itemWrapper">
+			<div className="itemWrapper" data-testid="category">
 				{list?.map((card, i) => {
 					const data = card?.card?.card;
 					{

@@ -8,7 +8,7 @@ const Restraunt = ({
 	costForTwoString,
 }) => {
 	return (
-		<div className="restrauntCard box-border flex flex-col w-180 p-2 border border-transparent rounded hover:border hover:border-slate-300 lg:w-56 mb-3">
+		<div data-testid="restraunt" className="restrauntCard box-border flex flex-col w-180 p-2 border border-transparent rounded hover:border hover:border-slate-300 lg:w-56 mb-3">
 			<img
 				src={`${cloudinary_Url}/${cloudinaryImageId}`}
 				className="rounded object-contain"

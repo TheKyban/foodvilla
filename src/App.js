@@ -7,29 +7,18 @@ import {
     useLocation,
 } from "react-router-dom";
 import Footer from "./Components/Footer";
-import About from "./Pages/About.js";
 import Cart from "./Pages/Cart";
 import Profile from "./Components/Profile";
 import RestrauntMenu from "./pages/RestrauntMenu";
 import Registration from "./Components/Registration";
 import Login from "./Components/Login.js";
 import Error from "./Pages/Error";
-import { useEffect, useState } from "react";
 import Offline from "./Pages/Offline";
+import useOnline from "./hooks/useOnline";
 
 const Frame = () => {
     const location = useLocation();
-    const [online, setOnline] = useState(navigator.onLine);
-    console.log(online);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setOnline(navigator.onLine);
-        }, 3000);
-
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
+    const online = useOnline();
 
     return (
         <>

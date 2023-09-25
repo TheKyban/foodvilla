@@ -3,21 +3,39 @@ import logo from "../assets/logo.png";
 import hamburger from "../assets/hamburger.svg";
 import cross from "../assets/cross.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [login] = useState(false);
     const [menu, setMenu] = useState(false);
+    const cart = useSelector((slice) => slice.cart.carts);
     return (
         <div className="headerWrapper shadow-md flex items-center justify-center">
             <div className="header flex justify-between items-center py-3 w-mobile sm:w-tablet lg:w-pc pl-2">
-                <img id={"logo"} className="w-14 object-contain " src={logo} />
+                <img
+                    id={"logo"}
+                    data-testid="logo"
+                    className="w-14 object-contain "
+                    src={logo}
+                />
                 <ul className="hidden flex-row gap-4 items-center sm:flex">
                     <li>
                         <Link to={"/"}>Home</Link>
                     </li>
 
                     <li>
-                        <Link to={"/cart"}>Cart</Link>
+                        <Link
+                            className={"flex gap-2 items-center"}
+                            to={"/cart"}
+                        >
+                            Cart{" "}
+                            <div
+                                data-testid="cart"
+                                className="bg-slate-200 text-sm h-5 text-center w-5 rounded-full"
+                            >
+                                {cart?.length}
+                            </div>
+                        </Link>
                     </li>
                     <li>
                         {login ? (
@@ -40,7 +58,18 @@ const Header = () => {
                             </li>
 
                             <li onClick={() => setMenu(false)}>
-                                <Link to={"/cart"}>Cart</Link>
+                                <Link
+                                    className={"flex gap-2 items-center"}
+                                    to={"/cart"}
+                                >
+                                    Cart{" "}
+                                    <div
+                                        data-testid="cart"
+                                        className="bg-slate-200 text-sm h-5 text-center w-5 rounded-full"
+                                    >
+                                        {cart?.length}
+                                    </div>
+                                </Link>
                             </li>
                             <li onClick={() => setMenu(false)}>
                                 {login ? (
